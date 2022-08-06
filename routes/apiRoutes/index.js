@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const saveData = require('../db/saveData');
+const saveData = require('../db/notes.js');
 const { route } = require('../htmlRoutes/index.js');
 
 //get request
