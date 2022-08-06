@@ -1,8 +1,14 @@
 const util = require('utils');
 const fs = require('fs');
+
+
 const { notStrictEqual } = require('assert');
 const { title } = require('process');
 const { text } = require('body-parser');
+
+const writeNote = util.promisify(fs.readFile);
+const readNote = util.promisify(fs.writeFile);
+
 
 
 
@@ -32,7 +38,12 @@ if (!title || !text){
     throw new Error('Please do not leave blank');
 }
 
+const newNote = {title, text, id};
 
+return this.retrieveNotes()
+.then(updatedNotes => this.write(updatedNotes))
+.then(notes =>[...notes,newNote])
+.then(() => newNote);
 
 
 
