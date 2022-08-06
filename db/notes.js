@@ -9,7 +9,23 @@ const { text } = require('body-parser');
 const writeNote = util.promisify(fs.readFile);
 const readNote = util.promisify(fs.writeFile);
 
-
+//Note functions
+class note {
+    write(note){
+        return writeNote('db/db.json', JSON.stringify(note));
+    }
+    retrieveNotes(){
+        return this.read().then(notes => {
+            let parsedNotes;
+            try {
+                parsedNotes = [].concat(JSON.parse(notes));
+            } catch (err){
+                parsedNotes = [];
+            }
+            return parsedNotes;
+        })
+    }
+}
 
 
 
