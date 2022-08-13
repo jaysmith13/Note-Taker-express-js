@@ -27,7 +27,7 @@ class note {
     }
 }
 
-addNote(note) 
+addNote(note) {
 const{  title, text
 } =note;
 if (!title || !text){
@@ -40,7 +40,7 @@ return this.retrieveNotes()
 .then(updatedNotes => this.write(updatedNotes))
 .then(notes =>[...notes,newNote])
 .then(() => newNote);
-
+}
 
 
 //Delete Note
