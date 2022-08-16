@@ -52,4 +52,4 @@ function deleteNote(id)
     .then(filteredNotes => this.write(filteredNotes));
 }
 
-module.exports = new Save();
+module.exports = notes;
