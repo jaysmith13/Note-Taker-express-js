@@ -3,7 +3,8 @@ const fs = require('fs');
 
 
 const { notStrictEqual } = require('assert');
-
+const { title } = require('process');
+const { text } = require('body-parser');
 
 
 const writeNote = util.promisify(fs.readFile);
@@ -27,8 +28,8 @@ class note {
     }
 }
 
-addNote(note) {
-const{  title, text
+function addNote(note) {
+const{  title, text,id
 } =note;
 if (!title || !text){
     throw new Error('Please do not leave blank');
