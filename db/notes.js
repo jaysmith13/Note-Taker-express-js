@@ -45,7 +45,7 @@ return this.retrieveNotes()
 
 
 //Delete Note
-deleteNote(id) 
+function deleteNote(id) 
 {
     return this.retrieveNotes()
     .then(note => notes.filter(note => note.id !== parseInt(id)))
