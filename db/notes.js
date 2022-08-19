@@ -11,7 +11,7 @@ const writeNote = util.promisify(fs.readFile);
 const readNote = util.promisify(fs.writeFile);
 
 //Note functions
-class note {
+class Note {
     write(note){
         return writeNote('db/db.json', JSON.stringify(note));
     }
@@ -52,4 +52,4 @@ function deleteNote(id)
     .then(filteredNotes => this.write(filteredNotes));
 }
 
-module.exports = notes;
+module.exports = new Note();
