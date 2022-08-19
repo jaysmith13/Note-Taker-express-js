@@ -11,5 +11,6 @@ Note taker is an application designed to store and save lists and ideas.
 I used source code provided by the University and Sparc Plus Tech express.js demo
 
 ## Deployed Link
+https://jaysmith13.github.io/Note-Taker-express-js/
 
 https://note-taker-ex-js.herokuapp.com/
