@@ -16,7 +16,7 @@ class Note {
         return writeNote('db/db.json', JSON.stringify(note));
     }
     retrieveNotes(){
-        return this.read().then(notes => {
+        return this.readNote().then(notes => {
             let parsedNotes;
             try {
                 parsedNotes = [].concat(JSON.parse(notes));
